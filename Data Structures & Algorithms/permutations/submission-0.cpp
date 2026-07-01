@@ -1,0 +1,11 @@
+class Solution {
+   public:
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> permutations;
+        sort(nums.begin(), nums.end());
+        do {
+            permutations.push_back(nums);
+        } while (ranges::next_permutation(nums).found);
+        return permutations;
+    }
+};
